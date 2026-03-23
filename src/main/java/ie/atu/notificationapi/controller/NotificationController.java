@@ -1,6 +1,7 @@
 package ie.atu.notificationapi.controller;
 
 import ie.atu.notificationapi.model.Notification;
+import ie.atu.notificationapi.model.NotificationRecord;
 import ie.atu.notificationapi.service.NotificationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class NotificationController {
     }
 
     @GetMapping("/allNotifs")
-    public ResponseEntity<List<Notification>> getAllNotifications() {
+    public ResponseEntity<List<NotificationRecord>> getAllNotifications() {
         return ResponseEntity.ok(notificationService.getAllNotifications());
     }
 

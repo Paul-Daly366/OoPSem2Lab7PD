@@ -1,5 +1,6 @@
 package ie.atu.notificationapi.service;
 
+import ie.atu.notificationapi.model.NotificationRecord;
 import ie.atu.notificationapi.repository.NotificationRepo;
 import ie.atu.notificationapi.client.ReservationClient;
 import ie.atu.notificationapi.model.Notification;
@@ -20,13 +21,13 @@ public class NotificationService {
         this.notificationRepo = notificationRepo;
     }
 
-    public List<Notification> getAllNotifications() {
+    public List<NotificationRecord> getAllNotifications() {
         return notificationRepo.findAll();
     }
 
-    public Notification createNotification(Long reservationId){
+    public NotificationRecord createNotification(Long reservationId){
         Reservation reservation = reservationClient.getReservation(reservationId);
-        Notification notification = new Notification();
+        NotificationRecord notification = new NotificationRecord();
         notification.setReservationId(reservationId);
         notification.setEquipmentTag(reservation.getEquipmentTag());
         notification.setStudentEmail(reservation.getStudentEmail());

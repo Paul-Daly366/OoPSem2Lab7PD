@@ -28,6 +28,7 @@ public class Notification {
     private String studentEmail;
 
     private LocalDate notificationDate;
-    private boolean notificationStatus;
+
+    private boolean notificationSent;
 
 }
